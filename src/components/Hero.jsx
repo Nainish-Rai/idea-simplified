@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { TiLocationArrow } from "react-icons/ti";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
@@ -15,6 +14,7 @@ const Hero = () => {
 
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
+  const [introComplete, setIntroComplete] = useState(false);
 
   const totalVideos = 4;
   const nextVdRef = useRef(null);
@@ -31,9 +31,161 @@ const Hero = () => {
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
-
     setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
+
+  // Premium intro animation
+  useGSAP(() => {
+    if (!loading && !introComplete) {
+      const tl = gsap.timeline({
+        onComplete: () => setIntroComplete(true),
+      });
+
+      // Initial setup - hide all content
+      gsap.set(
+        [
+          "[data-hero-title]",
+          "[data-hero-description]",
+          "[data-hero-buttons]",
+          "[data-video-preview]",
+        ],
+        {
+          opacity: 0,
+          y: 100,
+        }
+      );
+
+      gsap.set("[data-hero-title-bg]", {
+        opacity: 0,
+        y: 50,
+        scale: 0.8,
+      });
+
+      gsap.set("#video-frame", {
+        scale: 1.1,
+        opacity: 0,
+      });
+
+      // Set initial overlay states for modern transition
+      gsap.set("[data-overlay-1]", {
+        scaleY: 1,
+        transformOrigin: "top center",
+      });
+      gsap.set("[data-overlay-2]", {
+        scaleY: 1,
+        transformOrigin: "center center",
+      });
+      gsap.set("[data-overlay-3]", {
+        scaleY: 1,
+        transformOrigin: "bottom center",
+      });
+
+      // Modern premium overlay exit with scale and fade
+      tl.to("[data-overlay-1]", {
+        scaleY: 0,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power4.inOut",
+      })
+        .to(
+          "[data-overlay-2]",
+          {
+            scaleY: 0,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.inOut",
+          },
+          "-=1.2"
+        )
+        .to(
+          "[data-overlay-3]",
+          {
+            scaleY: 0,
+            opacity: 0,
+            duration: 1.0,
+            ease: "power4.inOut",
+          },
+          "-=1.0"
+        )
+
+        // Add a subtle flash effect
+        .to(
+          "#video-frame",
+          {
+            opacity: 0.3,
+            duration: 0.1,
+            ease: "none",
+          },
+          "-=0.5"
+        )
+
+        // Animate video frame in with modern easing
+        .to(
+          "#video-frame",
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1.8,
+            ease: "power4.out",
+          },
+          "-=0.4"
+        )
+
+        // Animate content in with premium stagger
+        .to(
+          "[data-hero-title-bg]",
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.4,
+            ease: "power4.out",
+          },
+          "-=1.0"
+        )
+        .to(
+          "[data-hero-title]",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power4.out",
+          },
+          "-=0.8"
+        )
+        .to(
+          "[data-hero-description]",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.0,
+            ease: "power4.out",
+          },
+          "-=0.8"
+        )
+        .to(
+          "[data-hero-buttons]",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.0,
+            ease: "power4.out",
+          },
+          "-=0.6"
+        )
+        .to(
+          "[data-video-preview]",
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            ease: "back.out(1.7)",
+          },
+          "-=0.8"
+        );
+    }
+  }, [loading]);
 
   useGSAP(
     () => {
@@ -76,6 +228,7 @@ const Hero = () => {
         start: "center center",
         end: "bottom center",
         scrub: true,
+        refreshPriority: -1, // Ensure this updates after Lenis
       },
     });
   });
@@ -84,6 +237,24 @@ const Hero = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden bg-black">
+      {/* Premium Intro Overlays */}
+      {!introComplete && (
+        <>
+          <div
+            data-overlay-1
+            className="fixed inset-0 z-[200] bg-gradient-to-br from-black via-gray-900 to-black"
+          />
+          <div
+            data-overlay-2
+            className="fixed inset-0 z-[199] bg-gradient-to-tr from-black/90 via-gray-800/90 to-black/90"
+          />
+          <div
+            data-overlay-3
+            className="fixed inset-0 z-[198] bg-gradient-to-bl from-black/80 via-gray-700/80 to-black/80"
+          />
+        </>
+      )}
+
       {loading && (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-black">
           <div className="three-body">
@@ -96,10 +267,13 @@ const Hero = () => {
 
       <div
         id="video-frame"
-        className="relative z-10 h-dvh w-screen overflow-hidden bg-black border border-white/10"
+        className="relative z-10 h-dvh w-screen overflow-hidden border border-white/10 bg-black"
       >
         <div>
-          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-2xl ">
+          <div
+            data-video-preview
+            className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-2xl"
+          >
             <VideoPreview>
               <div
                 onClick={handleMiniVdClick}
@@ -141,20 +315,30 @@ const Hero = () => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
-        <h1 className="hero-heading absolute bottom-8 right-8 z-40 text-white/90">
+        <h1
+          data-hero-title-bg
+          className="hero-heading absolute bottom-8 right-8 pointer-events-none text-white/20"
+        >
           IDEA SIMPLIFIED
         </h1>
-        <div className="absolute bottom-10 left-8 z-50 ">
-          <p className=" mb-8 ml-2 max-w-xl text-white/90">
+
+        <h1
+          data-hero-title
+          className="hero-heading absolute bottom-8 right-8 z-40 text-white/90"
+        >
+          IDEA SIMPLIFIED
+        </h1>
+
+        <div data-hero-content className="absolute bottom-10 left-8 z-50">
+          <p data-hero-description className="mb-8 ml-2 max-w-xl text-white/90">
             We are the award-winning experiential events and brand consulting
             firm that transforms your vision from ideation to flawless
             completion. Your brand, amplified. Your event, unforgettable.
           </p>
-          <div className="flex flex-wrap gap-6">
+          <div data-hero-buttons className="flex flex-wrap gap-6">
             <Button
               id="schedule-call"
               title="Schedule a  Call"
-              // leftIcon={<TiLocationArrow />}
               containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4 rounded-full font-medium"
             />
             <Button
@@ -166,18 +350,9 @@ const Hero = () => {
         </div>
 
         <div className="absolute left-0 top-0 z-40 size-full">
-          <div className="container-grid mt-24 md:mt-32">
-            {/* <h1 className="hero-heading text-white mb-8 max-w-5xl">
-              From Complex <span className="text-accent">I</span>dea to <br />
-              Unforgettable <span className="text-accent">I</span>mpact
-            </h1> */}
-          </div>
+          <div className="container-grid mt-24 md:mt-32"></div>
         </div>
       </div>
-
-      <h1 className="hero-heading absolute bottom-8 right-8 text-white/20 pointer-events-none">
-        IDEA SIMPLIFIED
-      </h1>
     </div>
   );
 };
