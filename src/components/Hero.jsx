@@ -315,16 +315,16 @@ const Hero = () => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
-        <h1
+        {/* <h1
           data-hero-title-bg
           className="hero-heading absolute bottom-8 right-8 pointer-events-none text-white/20"
         >
           IDEA SIMPLIFIED
-        </h1>
+        </h1> */}
 
         <h1
           data-hero-title
-          className="hero-heading absolute bottom-8 right-8 z-40 text-white/90"
+          className="hero-heading absolute bottom-8 right-8 z-50 text-white/90"
         >
           IDEA SIMPLIFIED
         </h1>

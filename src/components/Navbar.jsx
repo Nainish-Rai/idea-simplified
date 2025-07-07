@@ -3,10 +3,16 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { Link, useLocation } from "react-router-dom";
 
 import Button from "./Button";
 
-const navItems = ["About", "Contact", "Features", "BRANDS"];
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about-us" },
+  { name: "Our Work", path: "/#story" },
+  { name: "Contact Us", path: "/#contact" },
+];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -20,6 +26,8 @@ const NavBar = () => {
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const location = useLocation();
 
   // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
@@ -72,11 +80,13 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between px-6 py-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-8">
-            <img
-              src="/img/logo.png"
-              alt="logo"
-              className="w-20 h-20 object-contain"
-            />
+            <Link to="/">
+              <img
+                src="/img/logo.png"
+                alt="logo"
+                className="w-20 h-20 object-contain cursor-pointer"
+              />
+            </Link>
 
             <Button
               id="product-button"
@@ -89,15 +99,31 @@ const NavBar = () => {
           {/* Navigation Links and Audio Button */}
           <div className="flex h-full items-center">
             <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
+              {navItems.map((item, index) => {
+                // Check if it's an external route or internal hash link
+                const isExternalRoute =
+                  item.path.startsWith("/") && !item.path.includes("#");
+                const isCurrentPage = location.pathname === item.path;
+
+                if (isExternalRoute) {
+                  return (
+                    <Link
+                      key={index}
+                      to={item.path}
+                      className={`nav-hover-btn ${isCurrentPage ? "text-yellow-300" : ""}`}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                } else {
+                  // For hash links, use regular anchor tags
+                  return (
+                    <a key={index} href={item.path} className="nav-hover-btn">
+                      {item.name}
+                    </a>
+                  );
+                }
+              })}
             </div>
 
             <button
