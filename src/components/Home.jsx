@@ -4,6 +4,7 @@ import Features from "./Features";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import { GallerySection } from "./Gallery";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <About />
       <Features />
       {/* <Story /> */}
+      <GallerySection />
       <Contact />
       <Footer />
     </>

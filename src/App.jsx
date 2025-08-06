@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Router>
-      <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <main className="dark relative min-h-screen w-screen overflow-x-hidden">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

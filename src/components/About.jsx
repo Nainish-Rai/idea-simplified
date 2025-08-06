@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { Logos10 } from "./LogosSection";
 
 import AnimatedTitle from "./AnimatedTitle";
 
@@ -37,15 +38,7 @@ const About = () => {
           </p>
 
           {/* Client Logos Grid */}
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
-            {[1, 2, 3, 4, 5, 6].map((logo) => (
-              <div key={logo} className="group">
-                <div className="w-32 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-sm text-white/40 hover:bg-white/10 hover:border-white/20 hover:text-white/60 transition-all duration-300 backdrop-blur-sm">
-                  Logo {logo}
-                </div>
-              </div>
-            ))}
-          </div>
+          <Logos10 />
         </div>
       </div>
 

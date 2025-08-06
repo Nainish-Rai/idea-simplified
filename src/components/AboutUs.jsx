@@ -8,6 +8,7 @@ import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
 import Footer from "./Footer";
+import { OurApproach } from "./OurApproach";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,28 +129,22 @@ const AboutUs = () => {
 
   const teamMembers = [
     {
-      name: "Rajesh Kumar",
-      role: "Founder & Chief Strategist",
+      name: "Suman Bhowmick",
+      role: "Co-Founder & CEO",
       description: "20+ years in experiential marketing and brand consulting",
-      image: "/img/gallery-1.webp",
+      image: "/img/suman.png",
     },
     {
-      name: "Priya Sharma",
-      role: "Head of Experiential Events",
+      name: "Mihir Thakkar",
+      role: "Co-Founder & CBO",
       description: "Expert in large-scale event production and management",
-      image: "/img/gallery-2.webp",
+      image: "/img/mihir.png",
     },
     {
-      name: "Arjun Mehta",
-      role: "Creative Director",
-      description: "Award-winning designer with global brand experience",
-      image: "/img/gallery-3.webp",
-    },
-    {
-      name: "Sneha Patel",
-      role: "Strategy Lead",
-      description: "Data-driven strategist focused on measurable outcomes",
-      image: "/img/gallery-4.webp",
+      name: "Divyesh Kantharia",
+      role: "Co-Founder & COO",
+      description: "Co-Founder & COO",
+      image: "/img/divyesh.png",
     },
   ];
 
@@ -234,37 +229,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Event Mavericks",
-                description:
-                  "Pushing boundaries in experiential event design and execution",
-                icon: "🎯",
-              },
-              {
-                title: "Story Tellers",
-                description:
-                  "Crafting compelling narratives that resonate with audiences",
-                icon: "📖",
-              },
-              {
-                title: "Design Maniacs",
-                description:
-                  "Creating visually stunning experiences that leave lasting impressions",
-                icon: "🎨",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="text-center p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h4 className="text-h2 font-bold mb-4">{item.title}</h4>
-                <p className="text-body">{item.description}</p>
-              </div>
-            ))}
-          </div>
+          <OurApproach />
         </div>
       </section>
 
@@ -339,14 +304,14 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} data-team-member className="text-center group">
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-84 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -354,7 +319,7 @@ const AboutUs = () => {
                 <p className="text-yellow-300 text-sm font-medium mb-2">
                   {member.role}
                 </p>
-                <p className="text-body text-sm">{member.description}</p>
+                {/* <p className="text-body text-sm">{member.description}</p> */}
               </div>
             ))}
           </div>

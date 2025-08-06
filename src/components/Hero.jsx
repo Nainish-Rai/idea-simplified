@@ -344,7 +344,7 @@ const Hero = () => {
             <Button
               id="see-work"
               title="See Our Work"
-              containerClass="bg-transparent border border-white/30 text-black hover:bg-white/10 hover:border-white/50 hover:text-white transition-all duration-300 px-8 py-4 rounded-full font-medium backdrop-blur-sm"
+              containerClass="bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50 hover:text-white transition-all duration-300 px-8 py-4 rounded-full font-medium backdrop-blur-sm"
             />
           </div>
         </div>
