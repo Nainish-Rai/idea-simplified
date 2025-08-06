@@ -157,7 +157,6 @@ const AboutUs = () => {
       <section ref={heroRef} className="section-padding">
         <div className="container-grid">
           <div className="text-center mb-16">
-            <AnimatedTitle title="About <b>U</b>s" containerClass="mb-8" />
             <p
               data-hero-subtitle
               className="text-h2 text-yellow-300 font-bold mb-8"
@@ -171,34 +170,35 @@ const AboutUs = () => {
               OUR MOTTO - <span className="text-accent">I</span>DEATION TO{" "}
               <span className="text-accent">C</span>OMPLETION
             </p>
+          </div>{" "}
+          <div className="container-grid">
+            <div className="max-w-6xl mx-auto text-center">
+              <p className="text-body text-lg leading-relaxed mb-12">
+                At Idea Simplified, we bring a wealth of experience, innovation,
+                and a proven track record to every project we undertake.
+              </p>
+              <p className="text-body text-lg leading-relaxed mb-12">
+                Our mission is to create the most credible event platforms which
+                brings thought leaders from industry and technology, policy
+                makers, start-ups and academia as a cohesive unit fostering
+                innovation and business growth.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="section-padding bg-gradient-to-b from-black to-gray-900">
-        <div className="container-grid">
-          <div className="max-w-6xl mx-auto text-center">
-            <p className="text-body text-lg leading-relaxed mb-12">
-              At Idea Simplified, we bring a wealth of experience, innovation,
-              and a proven track record to every project we undertake.
-            </p>
-            <p className="text-body text-lg leading-relaxed mb-12">
-              Our mission is to create the most credible event platforms which
-              brings thought leaders from industry and technology, policy
-              makers, start-ups and academia as a cohesive unit fostering
-              innovation and business growth.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Story Image Section */}
       <section ref={storyRef} className="h-screen relative overflow-hidden">
         <div data-story-image className="absolute inset-0 w-full h-full">
-          <img
-            src="/img/about.webp"
-            alt="Our Story"
+          <video
+            src="/videos/execution.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -222,73 +222,15 @@ const AboutUs = () => {
           <div className="text-center mb-16">
             <AnimatedTitle title="Our <b>A</b>pproach" containerClass="mb-8" />
             <p className="text-body text-lg max-w-4xl mx-auto">
-              We understand that there is no "one brush paints all" strategy,
-              and every client's requirement is unique that requires bespoke
-              solutions which are timeless, innovative at the same time simple
-              that can connect with today's demanding digital consumers.
+              We believe every brand is unique and deserves a tailored approach.
+              Our process is rooted in deep understanding, creative
+              problem-solving, and a passion for simplicity. We craft
+              innovative, timeless solutions that connect with today’s audiences
+              and drive real results.
             </p>
           </div>
 
           <OurApproach />
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section
-        ref={servicesRef}
-        className="section-padding bg-gradient-to-b from-gray-900 to-black"
-      >
-        <div className="container-grid">
-          <div className="text-center mb-16">
-            <AnimatedTitle title="Our <b>S</b>ervices" containerClass="mb-8" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                data-service-card
-                className="relative bg-white/5 rounded-3xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500 group"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <VideoPreview>
-                    <video
-                      src={service.video}
-                      autoPlay
-                      loop
-                      muted
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </VideoPreview>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                </div>
-
-                <div className="p-8">
-                  <h3 className="text-h2 font-bold mb-4 group-hover:text-yellow-300 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-body mb-6">{service.description}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-3 text-sm text-white/70"
-                      >
-                        <TiLocationArrow className="text-yellow-300 text-xs" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    title="Learn More"
-                    containerClass="w-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

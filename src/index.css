@@ -244,6 +244,7 @@ body {
   .text-accent {
     font-family: "Playfair Display", Georgia, serif;
     font-style: italic;
+    color: white;
   }
 
   /* Grid system */
