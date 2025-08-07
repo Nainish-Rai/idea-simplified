@@ -52,9 +52,14 @@ const About = () => {
 
           <div className="max-w-3xl mx-auto mt-8">
             <p className="text-body text-white/80 text-lg leading-relaxed">
-              We provide two core pillars of service, designed to work
-              seamlessly together to build and celebrate your brand with
-              precision and impact.
+              At Idea Simplified, we combine strategic clarity with creative
+              firepower to deliver experiences that matter — from immersive
+              brand launches to high-stakes CXO roundtables and global
+              roadshows. With offices in India and the UAE, our work spans
+              across fintech, energy, healthcare, and beyond. <br /> Whether
+              you're building a brand, launching a product, or creating
+              industry-defining conversations, we guide you from ideation to
+              execution.
             </p>
           </div>
         </div>

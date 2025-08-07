@@ -331,21 +331,22 @@ const Hero = () => {
 
         <div data-hero-content className="absolute bottom-10 left-8 z-50">
           <p data-hero-description className="mb-8 ml-2 max-w-xl text-white/90">
-            We are the award-winning experiential events and brand consulting
-            firm that transforms your vision from ideation to flawless
-            completion. Your brand, amplified. Your event, unforgettable.
+            A collective of strategists, storytellers, designers, and event
+            innovators — we turn vision into impact, fast.
           </p>
           <div data-hero-buttons className="flex flex-wrap gap-6">
             <Button
               id="schedule-call"
-              title="Schedule a  Call"
+              title="Let’s Collaborate"
               containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4 rounded-full font-medium"
             />
-            <Button
-              id="see-work"
-              title="See Our Work"
-              containerClass="bg-transparent border border-white/30  hover:bg-white/10 hover:border-white/50 hover:text-white transition-all duration-300 px-8 py-4 rounded-full font-medium backdrop-blur-sm"
-            />
+            <a href="/work">
+              <Button
+                id="see-work"
+                title="See Our Work"
+                containerClass="bg-transparent border border-white/30  hover:bg-white/10 hover:border-white/50 hover:text-white transition-all duration-300 px-8 py-4 rounded-full font-medium backdrop-blur-sm"
+              />
+            </a>
           </div>
         </div>
 

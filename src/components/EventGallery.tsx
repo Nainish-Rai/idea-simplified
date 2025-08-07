@@ -43,7 +43,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/gallery-1.webp"
+              src="/img/f1.png"
               alt="Event Gallery Image 1"
             />
           </BlurVignette>
@@ -58,7 +58,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/gallery-2.webp"
+              src="/img/stage1.png"
               alt="Event Gallery Image 2"
             />
           </BlurVignette>
@@ -73,7 +73,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/gallery-3.webp"
+              src="/img/stage2.png"
               alt="Event Gallery Image 3"
             />
           </BlurVignette>
@@ -88,7 +88,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/gallery-4.webp"
+              src="/img/f2.png"
               alt="Event Gallery Image 4"
             />
           </BlurVignette>
@@ -103,7 +103,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/gallery-5.webp"
+              src="/img/e1.png"
               alt="Event Gallery Image 5"
             />
           </BlurVignette>

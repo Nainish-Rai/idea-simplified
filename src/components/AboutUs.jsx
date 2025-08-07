@@ -161,27 +161,29 @@ const AboutUs = () => {
               data-hero-subtitle
               className="text-h2 text-yellow-300 font-bold mb-8"
             >
-              OUR STORY
+              Who We Are
             </p>
             <p
               data-hero-description
               className="text-h1 font-bold mb-8 max-w-4xl mx-auto"
             >
               OUR MOTTO - <span className="text-accent">I</span>DEATION TO{" "}
-              <span className="text-accent">C</span>OMPLETION
+              <span className="text-accent">E</span>XECUTION
             </p>
           </div>{" "}
           <div className="container-grid">
             <div className="max-w-6xl mx-auto text-center">
               <p className="text-body text-lg leading-relaxed mb-12">
-                At Idea Simplified, we bring a wealth of experience, innovation,
-                and a proven track record to every project we undertake.
+                Whether we’re launching a brand, hosting a summit, or designing
+                a digital ecosystem — we’re driven by one belief: Simplify the
+                idea. Amplify the experience.
               </p>
               <p className="text-body text-lg leading-relaxed mb-12">
-                Our mission is to create the most credible event platforms which
-                brings thought leaders from industry and technology, policy
-                makers, start-ups and academia as a cohesive unit fostering
-                innovation and business growth.
+                We’re not just consultants or event managers — we’re a
+                collective of thinkers, doers, creators, and disruptors. With a
+                future-first mindset and an integrated approach, we simplify
+                complex business challenges into impactful brand and event
+                experiences.
               </p>
             </div>
           </div>

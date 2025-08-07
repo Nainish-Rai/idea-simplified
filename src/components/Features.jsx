@@ -117,10 +117,10 @@ const Features = () => (
           src="videos/feature-1.mp4"
           title={
             <>
-              Experiential <b>E</b>vents
+              Experiential <b>E</b>vents & IPs
             </>
           }
-          description="We don't just plan events; we architect experiences. From exclusive C-suite roundtables to large-scale global exhibitions, we create immersive moments that captivate audiences and drive business growth."
+          description="We create immersive event experiences that drive outcomes. Whether it’s a CXO roundtable, summit, roadshow, or custom event IP — we handle concept, content, production, and engagement with precision."
           isComingSoon={false}
         />
       </BentoTilt>
@@ -134,7 +134,7 @@ const Features = () => (
                 Brand <b>C</b>onsulting
               </>
             }
-            description="A great brand is more than a logo; it's a story, a strategy, and a promise. We build powerful brands that resonate in crowded markets and deliver measurable ROI."
+            description="We help brands discover their voice and sharpen their identity through data-backed insights, market research, and strategic clarity. From positioning to performance marketing, we simplify brand building across digital, print, and on-ground touchpoints."
             isComingSoon={false}
           />
         </BentoTilt>
@@ -144,10 +144,10 @@ const Features = () => (
             src="https://videos.pexels.com/video-files/18493043/18493043-uhd_2730_1440_60fps.mp4"
             title={
               <>
-                Digital <b>D</b>ominance
+                Turnkey Exhibition <b>S</b>ervices
               </>
             }
-            description="Amplify your voice with cutting-edge social & performance marketing campaigns that cut through the noise and connect with your audience."
+            description="●	Turnkey Exhibition Services"
             isComingSoon={false}
           />
         </BentoTilt>
@@ -157,10 +157,10 @@ const Features = () => (
             src="https://videos.pexels.com/video-files/19205434/19205434-uhd_2560_1440_30fps.mp4"
             title={
               <>
-                Flawless <b>E</b>xecution
+                Event <b>E</b>xecution
               </>
             }
-            description="Where vision becomes reality. Our team of maniacal planners, designers, and strategists manage every detail for seamless, on-brand delivery."
+            description="We bring concepts to life with seamless execution — managing everything from venue sourcing and speaker coordination to logistics, vendor management, and live show production.."
             isComingSoon={false}
           />
         </BentoTilt>

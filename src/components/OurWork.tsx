@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Footer from "./Footer";
 import {
   ArrowUpRight,
   Play,
@@ -18,6 +19,7 @@ import {
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
 import { GalleryEvent } from "./EventGallery";
+import { Logos10 } from "./LogosSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,8 +58,8 @@ const projects: Project[] = [
     id: "fintech-fusion-2025",
     title: "Fintech Fusion India 2025",
     category: "Experiential Events",
-    image: "/img/gallery-1.webp",
-    video: "/videos/feature-1.mp4",
+    image: "/img/e1.png",
+    video: "/videos/execution.mp4",
     description:
       "A landmark event in Bengaluru for visionaries, regulators, and changemakers to shape the future of finance through collaboration.",
     theme: "Cohesive Innovation: Connecting Fintech Leaders and Innovators",
@@ -77,12 +79,7 @@ const projects: Project[] = [
       startups: "40+",
       hours: "50+",
     },
-    gallery: [
-      "/img/gallery-1.webp",
-      "/img/stage1.png",
-      "/img/stage2.png",
-      "/img/stage3.png",
-    ],
+    gallery: ["/img/f1.png", "/img/f2.png", "/img/f3.png", "/img/f4.png"],
     testimonial: {
       quote:
         "The event exceeded all expectations. The networking opportunities were unparalleled, and the production quality was world-class.",
@@ -93,10 +90,10 @@ const projects: Project[] = [
   },
   {
     id: "turnkey-exhibition-showcase",
-    title: "Turnkey Exhibition Design Showcase",
-    category: "Turnkey Exhibition Design",
-    image: "/img/gallery-2.webp",
-    video: "/videos/feature-2.mp4",
+    title: "Turn key Exhibition Design Showcase",
+    category: "Turn key Exhibition Design",
+    image: "/img/e2.png",
+    video: "/videos/execution.mp4",
     description:
       "High-impact, theme-based exhibition booths that attract, engage, and leave lasting impressions at major trade shows.",
     overview:
@@ -113,12 +110,7 @@ const projects: Project[] = [
       exhibits: "25+",
       engagement: "400% increase in booth traffic",
     },
-    gallery: [
-      "/img/gallery-2.webp",
-      "/img/gallery-4.webp",
-      "/img/a1.png",
-      "/img/a2.png",
-    ],
+    gallery: ["/img/t1.png", "/img/t2.png", "/img/t3.png", "/img/t4.png"],
     testimonial: {
       quote:
         "Our booth became the talk of the exhibition. The immersive experience created by Idea Simplified drove unprecedented engagement.",
@@ -131,8 +123,8 @@ const projects: Project[] = [
     id: "brand-consulting-showcase",
     title: "Building Standout Brands from Strategy to Execution",
     category: "Brand Consulting & Creatives",
-    image: "/img/gallery-3.webp",
-    video: "/videos/feature-3.mp4",
+    image: "/img/e3.webp",
+    video: "/videos/execution.mp4",
     description:
       "Strategic partnership for brands, crafting foundational strategies and integrated marketing campaigns that connect and convert.",
     overview:
@@ -149,12 +141,7 @@ const projects: Project[] = [
       roi: "250% average brand engagement increase",
       engagement: "180% boost in conversion rates",
     },
-    gallery: [
-      "/img/gallery-3.webp",
-      "/img/gallery-5.webp",
-      "/img/a3.png",
-      "/img/stage4.png",
-    ],
+    gallery: ["/img/b1.png", "/img/b2.png", "/img/b3.png", "/img/b4.png"],
     testimonial: {
       quote:
         "Idea Simplified transformed our brand identity and market positioning. The results speak for themselves - record growth across all metrics.",
@@ -214,7 +201,7 @@ const ProjectCard: React.FC<{
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-white/10 hover:border-white/20 transition-all duration-500 cursor-pointer ${
-        project.featured ? "md:col-span-2 md:row-span-2" : ""
+        project.featured ? "md:col-span-3 md:row-span-3" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -223,22 +210,15 @@ const ProjectCard: React.FC<{
     >
       {/* Background Image/Video */}
       <div className="absolute inset-0 z-0">
-        {project.video && isHovered ? (
-          <video
-            src={project.video}
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        )
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />{" "}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
       </div>
 
       {/* Content */}
@@ -261,7 +241,7 @@ const ProjectCard: React.FC<{
 
         {/* Bottom Section */}
         <div className="space-y-4">
-          <div>
+          <div className="w-full">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors duration-300">
               {project.title}
             </h3>
@@ -462,31 +442,10 @@ const CaseStudySection: React.FC<{
 };
 
 const OurWork: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const heroRef = useRef<HTMLDivElement>(null);
-  const filterRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-
-  // Filter projects
-  useEffect(() => {
-    if (activeFilter === "all") {
-      setFilteredProjects(projects);
-    } else {
-      const categoryMap: { [key: string]: string } = {
-        "experiential-events": "Experiential Events",
-        "turnkey-exhibition": "Turnkey Exhibition Design",
-        "brand-consulting": "Brand Consulting & Creatives",
-      };
-      setFilteredProjects(
-        projects.filter(
-          (project) => project.category === categoryMap[activeFilter]
-        )
-      );
-    }
-  }, [activeFilter]);
 
   // GSAP Animations
   useGSAP(() => {
@@ -517,26 +476,7 @@ const OurWork: React.FC = () => {
         },
         "-=0.6"
       );
-
-    // Filter animation
-    gsap.from("[data-filter-button]", {
-      scrollTrigger: {
-        trigger: filterRef.current,
-        start: "top center",
-        toggleActions: "play none none reverse",
-      },
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "easeOut",
-    });
   });
-
-  const handleFilterChange = (filterId: string) => {
-    setActiveFilter(filterId);
-    setSelectedProject(null);
-  };
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
@@ -550,79 +490,34 @@ const OurWork: React.FC = () => {
 
   return (
     <div className="min-h-screen w-screen bg-black text-white">
-      {/* Hero Section */}
-      {/* <section
-        ref={heroRef}
-        className="section-padding bg-gradient-to-br from-black via-gray-900 to-black"
-      >
-        <div className="container-grid">
-          <div className="text-center max-w-4xl mx-auto">
-            <AnimatedTitle
-              title="From <b>I</b>deation to Completion: <br /> Our Work in <b>A</b>ction"
-              containerClass="mb-8"
-            />
-            <p
-              data-hero-subtitle
-              className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12"
-            >
-              We turn complex ideas into measurable impact. Explore how we've
-              helped brands connect with their audiences through unified brand,
-              design, and event experiences.
-            </p>
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/60">
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <span>50+ Global Clients</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>200+ Events Delivered</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4" />
-                <span>15+ Industry Awards</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <GalleryEvent />
-      {/* Filter Navigation */}
-      <section ref={filterRef} className="py-16 bg-black">
+
+      {/* Section Heading */}
+      <section className="py-16 bg-black">
         <div className="container-grid">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <motion.button
-                key={category.id}
-                data-filter-button
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
-                  activeFilter === category.id
-                    ? "bg-yellow-300 text-black border-yellow-300"
-                    : "bg-white/5 text-white border-white/20 hover:bg-white/10 hover:border-white/30"
-                }`}
-                onClick={() => handleFilterChange(category.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category.name}
-                <span className="ml-2 text-xs opacity-70">
-                  ({category.count})
-                </span>
-              </motion.button>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Our <span className="text-yellow-300">Work</span>
+            </h2>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Explore our portfolio of successful projects that showcase our
+              expertise in experiential events, exhibition design, and brand
+              consulting.
+            </p>
           </div>
         </div>
       </section>
+
       {/* Projects Grid */}
       <section className="pb-32 bg-black">
-        <div className="container mx-auto px-6 max-w-7xl">
+        <div className="container-grid">
           <motion.div
             ref={gridRef}
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
           >
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
@@ -662,6 +557,7 @@ const OurWork: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
       {/* Case Study Section */}
       {selectedProject && (
         <section id="case-study-section">
@@ -671,6 +567,7 @@ const OurWork: React.FC = () => {
           />
         </section>
       )}
+
       {/* Featured Clients Section */}
       <section className="py-24 bg-gradient-to-br from-violet-900/20 to-blue-900/20">
         <div className="container-grid">
@@ -685,19 +582,8 @@ const OurWork: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {featuredClients.map((client, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center hover:bg-white/10 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-white font-medium">{client}</div>
-              </motion.div>
-            ))}
+          <div className="grid w-full gap-8 mb-16">
+            <Logos10 />
           </div>
 
           {/* Stats */}
@@ -728,6 +614,7 @@ const OurWork: React.FC = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

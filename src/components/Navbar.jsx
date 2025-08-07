@@ -2,16 +2,16 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
-import { TiLocationArrow } from "react-icons/ti";
+// import { TiLocationArrow } from "react-icons/ti";
 import { Link, useLocation } from "react-router-dom";
 
-import Button from "./Button";
+// import Button from "./Button";
 
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about-us" },
-  { name: "Our Work", path: "/#story" },
-  { name: "Contact Us", path: "/contact-us" },
+  { name: "Our Work", path: "/work" },
+  // { name: "Contact Us", path: "/contact-us" },
 ];
 
 const NavBar = () => {
@@ -88,12 +88,12 @@ const NavBar = () => {
               />
             </Link>
 
-            <Button
+            {/* <Button
               id="product-button"
               title="BOOK US"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 px-6 py-3 rounded-full font-medium hidden md:flex items-center justify-center gap-2"
-            />
+            /> */}
           </div>
 
           {/* Navigation Links and Audio Button */}
