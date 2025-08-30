@@ -59,13 +59,6 @@ const Logos10 = () => {
   return (
     <section className="">
       <div className="flex flex-col items-center justify-center  ">
-        <div className="bg-muted flex w-fit items-center justify-center gap-4 rounded-full px-4 py-2 tracking-tight transition-all ease-in-out hover:gap-6">
-          <span className="bg-foreground inline-block size-3 rounded-full" />
-          <p className="text-foreground text-center  justify-self-center">
-            Checkout Our Partners
-          </p>
-        </div>
-
         <div className="relative mx-auto flex items-center justify-center pt-8">
           <Carousel
             opts={{ loop: true }}
@@ -78,9 +71,6 @@ const Logos10 = () => {
                   className="h-35  relative flex basis-1/2 justify-center  pl-0 sm:basis-1/4 md:basis-1/3 lg:basis-1/6"
                 >
                   <div className="flex flex-col items-center justify-center lg:mx-10">
-                    <p className="absolute left-2 top-2 text-xs tracking-tighter">
-                      {(index + 1).toString().padStart(2, "0")}
-                    </p>
                     <img
                       src={logo.image}
                       alt={logo.description}

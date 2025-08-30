@@ -335,11 +335,13 @@ const Hero = () => {
             innovators — we turn vision into impact, fast.
           </p>
           <div data-hero-buttons className="flex flex-wrap gap-6">
-            <Button
-              id="schedule-call"
-              title="Let’s Collaborate"
-              containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4 rounded-full font-medium"
-            />
+            <a href="https://calendly.com/hello-ideasimplified/30min">
+              <Button
+                id="schedule-call"
+                title="Let’s Collaborate"
+                containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4 rounded-full font-medium"
+              />
+            </a>
             <a href="/work">
               <Button
                 id="see-work"

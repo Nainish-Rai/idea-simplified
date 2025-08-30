@@ -11,10 +11,10 @@ const GalleryEvent = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            From <span className="text-yellow-300">Ideation</span> to
-            Completion: <br />
+            From <span className="text-yellow-300">Ideation</span> to Completion{" "}
+            <br />
             Our Work in <span className="text-yellow-300">Action</span>
           </motion.h2>
           <motion.p
@@ -22,7 +22,7 @@ const GalleryEvent = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-4xl mx-auto"
+            className="text-base  text-balance text-white/80 leading-relaxed max-w-4xl mx-auto"
           >
             We turn complex ideas into measurable impact. Explore how we've
             helped brands connect with their audiences through unified brand,
@@ -36,7 +36,7 @@ const GalleryEvent = () => {
             radius="24px"
             inset="10px"
             transitionLength="100px"
-            blur="15px"
+            blur="0px"
             className="col-span-2 h-80 rounded-[2.5rem]"
           >
             <img

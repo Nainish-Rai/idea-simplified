@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { useEffect } from "react";
 import NavBar from "./components/Navbar";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
@@ -6,12 +12,24 @@ import ContactUs from "./components/ContactUs";
 import OurWork from "./components/OurWork";
 import { useLenis } from "./hooks/useLenis";
 
+// Component to scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   // Initialize Lenis smooth scroll
   useLenis();
 
   return (
     <Router>
+      <ScrollToTop />
       <main className="dark relative min-h-screen w-screen overflow-x-hidden">
         <NavBar />
         <Routes>

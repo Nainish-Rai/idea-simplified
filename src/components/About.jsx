@@ -46,7 +46,7 @@ const About = () => {
       <div className="relative mb-16 section-padding">
         <div className="container-grid text-center">
           <AnimatedTitle
-            title="One Partner, <br /> Infinite <b>P</b>ossibilities"
+            title="One Partner, Infinite Possibilities"
             containerClass="mt-5 text-white text-center"
           />
 

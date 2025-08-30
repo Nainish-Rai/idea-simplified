@@ -165,25 +165,22 @@ const AboutUs = () => {
             </p>
             <p
               data-hero-description
-              className="text-h1 font-bold mb-8 max-w-4xl mx-auto"
+              className="text-5xl font-bold mb-8 max-w-5xl mx-auto"
             >
               OUR MOTTO - <span className="text-accent">I</span>DEATION TO{" "}
               <span className="text-accent">E</span>XECUTION
             </p>
           </div>{" "}
           <div className="container-grid">
-            <div className="max-w-6xl mx-auto text-center">
-              <p className="text-body text-lg leading-relaxed mb-12">
+            <div className="max-w-5xl mx-auto text-center">
+              <p className="text-body text-lg text-balance leading-relaxed mb-12">
                 Whether we’re launching a brand, hosting a summit, or designing
                 a digital ecosystem — we’re driven by one belief: Simplify the
-                idea. Amplify the experience.
-              </p>
-              <p className="text-body text-lg leading-relaxed mb-12">
-                We’re not just consultants or event managers — we’re a
-                collective of thinkers, doers, creators, and disruptors. With a
-                future-first mindset and an integrated approach, we simplify
-                complex business challenges into impactful brand and event
-                experiences.
+                idea. Amplify the experience. We’re not just consultants or
+                event managers — we’re a collective of thinkers, doers,
+                creators, and disruptors. With a future-first mindset and an
+                integrated approach, we simplify complex business challenges
+                into impactful brand and event experiences.
               </p>
             </div>
           </div>
@@ -223,7 +220,7 @@ const AboutUs = () => {
         <div className="container-grid">
           <div className="text-center mb-16">
             <AnimatedTitle title="Our <b>A</b>pproach" containerClass="mb-8" />
-            <p className="text-body text-lg max-w-4xl mx-auto">
+            <p className="text-body text-lg text-balance max-w-4xl mx-auto">
               We believe every brand is unique and deserves a tailored approach.
               Our process is rooted in deep understanding, creative
               problem-solving, and a passion for simplicity. We craft
@@ -241,7 +238,7 @@ const AboutUs = () => {
         <div className="container-grid">
           <div className="text-center mb-16">
             <AnimatedTitle title="Meet Our <b>T</b>eam" containerClass="mb-8" />
-            <p className="text-body text-lg max-w-3xl mx-auto">
+            <p className="text-body text-lg text-balance max-w-3xl mx-auto">
               We are a team of event mavericks, story tellers, design maniacs
               and visionary strategists. Pushing boundaries and breaking the
               traditional barriers.
@@ -278,7 +275,7 @@ const AboutUs = () => {
             <p className="text-h2 font-bold mb-8">
               Have Any Projects in your Mind!
             </p>
-            <p className="text-body text-lg mb-12 max-w-2xl mx-auto">
+            <p className="text-body text-lg text-balance mb-12 max-w-2xl mx-auto">
               Feel free to contact us and let's create something extraordinary
               together. Your vision, our expertise - the perfect combination for
               success.
@@ -289,10 +286,12 @@ const AboutUs = () => {
                 title="Start Your Project"
                 containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-4"
               />
-              <Button
-                title="Schedule a Call"
-                containerClass="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-all duration-300 px-8 py-4"
-              />
+              <a href="https://calendly.com/hello-ideasimplified/30min">
+                <Button
+                  title="Schedule a Call"
+                  containerClass="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-all duration-300 px-8 py-4"
+                />
+              </a>
             </div>
           </div>
         </div>

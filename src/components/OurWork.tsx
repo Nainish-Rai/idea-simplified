@@ -69,7 +69,7 @@ const projects: Project[] = [
     client: "Industry Leaders Collective",
     services: [
       "Event IP Development",
-      "Strategic Ideation & Event Architecture",
+      "Strategic  tion & Event Architecture",
       "End-to-End Production & Operations",
     ],
     results: {
@@ -371,10 +371,10 @@ const CaseStudySection: React.FC<{
                   <Trophy className="w-6 h-6 text-yellow-300" />
                   Key Results
                 </h3>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-6">
                   {Object.entries(project.results).map(([key, value]) => (
-                    <div key={key} className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold text-yellow-300 mb-2">
+                    <div key={key} className="text-left">
+                      <div className="text-xl font-medium text-yellow-300 mb-2">
                         {value}
                       </div>
                       <div className="text-white/70 text-sm capitalize">
@@ -410,28 +410,6 @@ const CaseStudySection: React.FC<{
                     />
                   </motion.div>
                 ))}
-              </div>
-            </div>
-          )}
-
-          {/* Testimonial */}
-          {project.testimonial && (
-            <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12 border border-white/10 text-center">
-              <div className="text-6xl md:text-8xl text-yellow-300/20 mb-6">
-                "
-              </div>
-              <blockquote className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed italic">
-                {project.testimonial.quote}
-              </blockquote>
-              <div className="flex items-center justify-center gap-4">
-                <div>
-                  <div className="text-yellow-300 font-bold">
-                    {project.testimonial.author}
-                  </div>
-                  <div className="text-white/60 text-sm">
-                    {project.testimonial.position}
-                  </div>
-                </div>
               </div>
             </div>
           )}
@@ -496,10 +474,10 @@ const OurWork: React.FC = () => {
       <section className="py-16 bg-black">
         <div className="container-grid">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our <span className="text-yellow-300">Work</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-balance text-white/80 max-w-3xl mx-auto leading-relaxed">
               Explore our portfolio of successful projects that showcase our
               expertise in experiential events, exhibition design, and brand
               consulting.
@@ -539,7 +517,7 @@ const OurWork: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
               Ready to Create Your Success Story?
             </h3>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-white/80 text-balance mb-8 max-w-2xl mx-auto">
               Every project we've delivered started with a conversation. Let's
               discuss how we can bring your vision to life with precision and
               impact.
@@ -549,10 +527,12 @@ const OurWork: React.FC = () => {
                 title="Start Your Project"
                 containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-4"
               />
-              <Button
-                title="Schedule a Call"
-                containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4"
-              />
+              <a href="https://calendly.com/hello-ideasimplified/30min">
+                <Button
+                  title="Schedule a Call"
+                  containerClass="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/50 px-8 py-4"
+                />
+              </a>
             </div>
           </motion.div>
         </div>
@@ -576,7 +556,7 @@ const OurWork: React.FC = () => {
               Trusted by{" "}
               <span className="text-yellow-300">Industry Leaders</span>
             </h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+            <p className="text-white/80 text-balance max-w-2xl mx-auto">
               Our portfolio includes partnerships with some of the most
               respected names across industries.
             </p>

@@ -99,9 +99,9 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 };
 
 const Features = () => (
-  <section className="bg-black pb-52">
+  <section className="bg-black pt-32 pb-52">
     <div className="container mx-auto px-3 md:px-10">
-      <div className="px-5 py-32">
+      {/* <div className="px-5 py-32">
         <p className="font-circular-web text-lg text-blue-50">
           One Partner, Infinite Possibilities
         </p>
@@ -110,7 +110,7 @@ const Features = () => (
           together to build and celebrate your brand with precision and
           unforgettable impact.
         </p>
-      </div>
+      </div> */}
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
@@ -128,7 +128,7 @@ const Features = () => (
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="https://videos.pexels.com/video-files/17017674/17017674-hd_1920_1080_60fps.mp4"
+            src="/videos/branding.mp4"
             title={
               <>
                 Brand <b>C</b>onsulting
@@ -141,7 +141,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="https://videos.pexels.com/video-files/18493043/18493043-uhd_2730_1440_60fps.mp4"
+            src="/videos/booth.mp4"
             title={
               <>
                 Turnkey Exhibition <b>S</b>ervices
@@ -166,7 +166,7 @@ const Features = () => (
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
+          <div className="flex size-full flex-col justify-between bg-yellow-400 p-5">
             <h1 className="bento-title special-font max-w-64 text-black">
               <b>I</b>deas Made <b>R</b>eal.
             </h1>
