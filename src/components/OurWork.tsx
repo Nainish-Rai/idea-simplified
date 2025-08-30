@@ -525,7 +525,7 @@ const OurWork: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 title="Start Your Project"
-                containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-4"
+                containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300 mx-auto px-8 py-4"
               />
               <a href="https://calendly.com/hello-ideasimplified/30min">
                 <Button

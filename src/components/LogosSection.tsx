@@ -68,7 +68,7 @@ const Logos10 = () => {
               {logos.map((logo, index) => (
                 <CarouselItem
                   key={logo.id}
-                  className="h-35  relative flex basis-1/2 justify-center  pl-0 sm:basis-1/4 md:basis-1/3 lg:basis-1/6"
+                  className="h-35  relative flex max-sm:px-2 basis-1/2 justify-center  pl-0 sm:basis-1/4 md:basis-1/3 lg:basis-1/6"
                 >
                   <div className="flex flex-col items-center justify-center lg:mx-10">
                     <img

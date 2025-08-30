@@ -324,13 +324,19 @@ const Hero = () => {
 
         <h1
           data-hero-title
-          className="hero-heading absolute bottom-8 right-8 z-50 text-white/90"
+          className="hero-heading absolute bottom-1/2 lg:bottom-8 max-sm:text-4xl max-sm:left-6 max-sm:ml-2 lg:right-8 z-50 text-white/90"
         >
           IDEA SIMPLIFIED
         </h1>
 
-        <div data-hero-content className="absolute bottom-10 left-8 z-50">
-          <p data-hero-description className="mb-8 ml-2 max-w-xl text-white/90">
+        <div
+          data-hero-content
+          className="absolute bottom-12 lg:bottom-10 left-8 z-50"
+        >
+          <p
+            data-hero-description
+            className="mb-8 lg:ml-2 max-w-xl text-white/90"
+          >
             A collective of strategists, storytellers, designers, and event
             innovators — we turn vision into impact, fast.
           </p>

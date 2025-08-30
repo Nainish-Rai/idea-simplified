@@ -18,10 +18,12 @@ const NavBar = () => {
   // State for toggling audio and visual indicator
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Refs for audio and navigation container
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -33,6 +35,16 @@ const NavBar = () => {
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
+  };
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  // Close mobile menu when clicking on a link
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   // Manage audio playback
@@ -70,6 +82,44 @@ const NavBar = () => {
       ease: "power2.out",
     });
   }, [isNavVisible]);
+
+  // Manage mobile menu animation
+  useEffect(() => {
+    if (mobileMenuRef.current) {
+      if (isMobileMenuOpen) {
+        gsap.fromTo(
+          mobileMenuRef.current,
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+        );
+      }
+    }
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu when clicking outside or on scroll
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        !event.target.closest('button[aria-label="Toggle mobile menu"]')
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on scroll
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [currentScrollY]);
 
   return (
     <div
@@ -111,6 +161,7 @@ const NavBar = () => {
                       key={index}
                       to={item.path}
                       className={`nav-hover-btn ${isCurrentPage ? "text-yellow-300" : ""}`}
+                      onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
@@ -118,7 +169,12 @@ const NavBar = () => {
                 } else {
                   // For hash links, use regular anchor tags
                   return (
-                    <a key={index} href={item.path} className="nav-hover-btn">
+                    <a
+                      key={index}
+                      href={item.path}
+                      className="nav-hover-btn"
+                      onClick={closeMobileMenu}
+                    >
                       {item.name}
                     </a>
                   );
@@ -149,8 +205,43 @@ const NavBar = () => {
                 />
               ))}
             </button>
+
+            {/* Hamburger Menu Button for Mobile */}
+            <button
+              onClick={toggleMobileMenu}
+              className="ml-4 flex flex-col items-center justify-center p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 md:hidden"
+              aria-label="Toggle mobile menu"
+            >
+              <span
+                className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : "mb-1"}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-0" : "mb-1"}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+              ></span>
+            </button>
           </div>
         </nav>
+
+        {isMobileMenuOpen && (
+          <div
+            ref={mobileMenuRef}
+            className="absolute top-full left-0 w-full bg-black/20 backdrop-blur-sm text-white flex flex-col items-center py-4 md:hidden"
+          >
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                className="py-2 text-lg"
+                onClick={closeMobileMenu}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        )}
       </header>
     </div>
   );

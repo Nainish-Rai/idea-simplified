@@ -47,7 +47,7 @@ const About = () => {
         <div className="container-grid text-center">
           <AnimatedTitle
             title="One Partner, Infinite Possibilities"
-            containerClass="mt-5 text-white text-center"
+            containerClass="mt-5  text-white text-center"
           />
 
           <div className="max-w-3xl mx-auto mt-8">

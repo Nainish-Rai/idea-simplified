@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="h-full w-full bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
       </div>
 
-      <div className="relative  max-w-7xl mx-auto section-padding">
+      <div className="relative max-sm:px-8 max-w-7xl mx-auto section-padding">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Section */}
