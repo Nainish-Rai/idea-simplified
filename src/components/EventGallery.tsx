@@ -43,7 +43,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/f1.png"
+              src="/img/w1.jpg"
               alt="Event Gallery Image 1"
             />
           </BlurVignette>
@@ -58,7 +58,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage1.png"
+              src="/img/w10.jpg"
               alt="Event Gallery Image 2"
             />
           </BlurVignette>
@@ -73,7 +73,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage2.png"
+              src="/img/w2.jpg"
               alt="Event Gallery Image 3"
             />
           </BlurVignette>
@@ -88,7 +88,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/f2.png"
+              src="/img/w3.jpg"
               alt="Event Gallery Image 4"
             />
           </BlurVignette>
@@ -103,7 +103,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/e1.png"
+              src="/img/w4.jpg"
               alt="Event Gallery Image 5"
             />
           </BlurVignette>
@@ -119,7 +119,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage1.png"
+              src="/img/w6.jpg"
               alt="Stage Setup 1"
             />
           </BlurVignette>
@@ -134,7 +134,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage2.png"
+              src="/img/w7.jpg"
               alt="Stage Setup 2"
             />
           </BlurVignette>
@@ -149,7 +149,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage3.png"
+              src="/img/w8.jpg"
               alt="Stage Setup 3"
             />
           </BlurVignette>
@@ -164,7 +164,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover"
-              src="/img/stage4.png"
+              src="/img/w9.jpg"
               alt="Stage Setup 4"
             />
           </BlurVignette>
@@ -179,7 +179,7 @@ const GalleryEvent = () => {
               width={200}
               height={200}
               className="size-full rounded-[2.5rem] object-cover transition-all ease-in-out"
-              src="/img/a1.png"
+              src="/img/w11.jpg"
               alt="Additional Gallery Image"
             />
           </BlurVignette>

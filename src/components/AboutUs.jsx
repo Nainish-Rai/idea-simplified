@@ -215,24 +215,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Approach */}
-      <section className="section-padding">
-        <div className="container-grid">
-          <div className="text-center mb-16">
-            <AnimatedTitle title="Our <b>A</b>pproach" containerClass="mb-8" />
-            <p className="text-body text-lg text-balance max-w-4xl mx-auto">
-              We believe every brand is unique and deserves a tailored approach.
-              Our process is rooted in deep understanding, creative
-              problem-solving, and a passion for simplicity. We craft
-              innovative, timeless solutions that connect with today’s audiences
-              and drive real results.
-            </p>
-          </div>
-
-          <OurApproach />
-        </div>
-      </section>
-
       {/* Team Section */}
       <section ref={teamRef} className="section-padding">
         <div className="container-grid">
@@ -284,9 +266,12 @@ const AboutUs = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 title="Start Your Project"
-                containerClass="bg-yellow-300 mx-auto text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-4"
+                containerClass="bg-yellow-300  text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-4"
               />
-              <a href="https://calendly.com/hello-ideasimplified/30min">
+              <a
+                href="https://calendly.com/hello-ideasimplified/30min"
+                className="w-fit"
+              >
                 <Button
                   title="Schedule a Call"
                   containerClass="bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-all duration-300 px-8 py-4"

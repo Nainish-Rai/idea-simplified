@@ -50,16 +50,15 @@ const About = () => {
             containerClass="mt-5  text-white text-center"
           />
 
-          <div className="max-w-3xl mx-auto mt-8">
-            <p className="text-body text-white/80 text-lg leading-relaxed">
+          <div className="max-w-4xl mx-auto mt-8">
+            <p className="text-balance text-white/80 text-lg leading-relaxed">
               At Idea Simplified, we combine strategic clarity with creative
               firepower to deliver experiences that matter — from immersive
               brand launches to high-stakes CXO roundtables and global
               roadshows. With offices in India and the UAE, our work spans
               across fintech, energy, healthcare, and beyond. <br /> Whether
               you're building a brand, launching a product, or creating
-              industry-defining conversations, we guide you from ideation to
-              execution.
+              industry-defining conversations.
             </p>
           </div>
         </div>
@@ -68,7 +67,7 @@ const About = () => {
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <img
-            src="img/about.webp"
+            src="img/fusion.jpg"
             alt="Background"
             className="absolute left-0 top-0 size-full object-cover"
           />

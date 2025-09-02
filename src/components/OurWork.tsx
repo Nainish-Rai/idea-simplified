@@ -93,7 +93,7 @@ const projects: Project[] = [
     title: "Turn key Exhibition Design Showcase",
     category: "Turn key Exhibition Design",
     image: "/img/e2.png",
-    video: "/videos/execution.mp4",
+    video: "/videos/booth.mp4",
     description:
       "High-impact, theme-based exhibition booths that attract, engage, and leave lasting impressions at major trade shows.",
     overview:
@@ -124,7 +124,7 @@ const projects: Project[] = [
     title: "Building Standout Brands from Strategy to Execution",
     category: "Brand Consulting & Creatives",
     image: "/img/e3.webp",
-    video: "/videos/execution.mp4",
+    video: "/videos/homepage.mp4",
     description:
       "Strategic partnership for brands, crafting foundational strategies and integrated marketing campaigns that connect and convert.",
     overview:
@@ -344,7 +344,7 @@ const CaseStudySection: React.FC<{
           </div>
 
           {/* Services and Results */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className=" gap-12 mb-16">
             {/* Services Rendered */}
             <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
@@ -363,28 +363,6 @@ const CaseStudySection: React.FC<{
                 ))}
               </ul>
             </div>
-
-            {/* Key Results */}
-            {project.results && (
-              <div className="bg-gradient-to-br from-violet-900/20 to-blue-900/20 rounded-3xl p-8 border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                  <Trophy className="w-6 h-6 text-yellow-300" />
-                  Key Results
-                </h3>
-                <div className="space-y-6">
-                  {Object.entries(project.results).map(([key, value]) => (
-                    <div key={key} className="text-left">
-                      <div className="text-xl font-medium text-yellow-300 mb-2">
-                        {value}
-                      </div>
-                      <div className="text-white/70 text-sm capitalize">
-                        {key.replace(/([A-Z])/g, " $1").trim()}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Visual Gallery */}
@@ -525,7 +503,7 @@ const OurWork: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 title="Start Your Project"
-                containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300 mx-auto px-8 py-4"
+                containerClass="bg-yellow-300 text-black hover:bg-yellow-400 transition-all duration-300  px-8 py-4"
               />
               <a href="https://calendly.com/hello-ideasimplified/30min">
                 <Button
@@ -549,7 +527,7 @@ const OurWork: React.FC = () => {
       )}
 
       {/* Featured Clients Section */}
-      <section className="py-24 bg-gradient-to-br from-violet-900/20 to-blue-900/20">
+      <section className="py-24">
         <div className="container-grid">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -562,35 +540,8 @@ const OurWork: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid w-full gap-8 mb-16">
+          <div className="grid w-full bg-black gap-8 mb-16">
             <Logos10 />
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "1000+", label: "Total Attendees", icon: Users },
-              { number: "150+", label: "Expert Speakers", icon: Users },
-              { number: "60+", label: "Exhibition Booths", icon: Trophy },
-              { number: "24/7", label: "Project Support", icon: Clock },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 border border-white/10">
-                  <stat.icon className="w-6 h-6 text-yellow-300" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-yellow-300 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

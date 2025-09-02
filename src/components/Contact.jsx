@@ -80,7 +80,8 @@ const Contact = () => {
                   INDIA Office
                 </h4>
                 <p className="text-white/70 leading-relaxed">
-                  1205-06, D.S Galleria, LBS Rd, Mumbai
+                  Wework Zenia, Hiranandani Business park, Arcadia Cir,
+                  Hiranandani Estate, Thane West, Thane, Maharashtra 400607
                 </p>
                 <p className="text-white/70">+91 9711809870</p>
               </div>

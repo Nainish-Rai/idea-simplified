@@ -151,11 +151,13 @@ const Footer = () => {
                   Mumbai Office
                 </h5>
                 <div className="text-white/70 text-sm space-y-1">
-                  <p>1205-06, D.S Galleria</p>
-                  <p>LBS Rd, Mumbai</p>
+                  <p>
+                    Wework Zenia, Hiranandani Business park, Arcadia Cir,
+                    Hiranandani Estate, Thane West, Thane, Maharashtra 400607
+                  </p>
                   <a
                     href="tel:+919711809870"
-                    className="text-yellow-300 hover:text-white transition-colors"
+                    className="text-yellow-300  hover:text-white transition-colors"
                   >
                     +91 9711809870
                   </a>
