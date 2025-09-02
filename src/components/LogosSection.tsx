@@ -150,12 +150,6 @@ const Logos10 = () => {
       image: "/logos/l25.png",
       className: "h-28 rounded-2xl w-auto ",
     },
-    {
-      id: "logo-26",
-      description: "Logo 26",
-      image: "/logos/l26.png",
-      className: "h-28 rounded-2xl w-auto ",
-    },
   ];
 
   return (
@@ -170,9 +164,9 @@ const Logos10 = () => {
               {logos.map((logo, index) => (
                 <CarouselItem
                   key={logo.id}
-                  className="h-35  relative flex max-sm:px-2 basis-1/2 justify-center  pl-0 sm:basis-1/4 md:basis-1/3 lg:basis-1/6"
+                  className="h-35  relative  flex max-sm:px-2 basis-1/2 justify-center  pl-0 sm:basis-1/4 md:basis-1/3 lg:basis-1/6"
                 >
-                  <div className="flex flex-col items-center justify-center lg:mx-10">
+                  <div className="flex flex-col  bg-gray-100 p-2 rounded-md  items-center justify-center lg:mx-10">
                     <img
                       src={logo.image}
                       alt={logo.description}
