@@ -192,11 +192,11 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_2">
           <video
-            src="https://videos.pexels.com/video-files/30335407/13003576_1920_1080_30fps.mp4"
+            src="/videos/textcut.mp4"
             loop
             muted
             autoPlay
-            className="size-full object-cover object-center"
+            className="size-full border shadow shadow-yellow-400 object-cover object-center"
           />
         </BentoTilt>
       </div>
