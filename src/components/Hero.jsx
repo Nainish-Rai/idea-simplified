@@ -13,21 +13,15 @@ const Hero = () => {
   const [hasClicked, setHasClicked] = useState(false);
 
   const [loading, setLoading] = useState(true);
-  const [loadedVideos, setLoadedVideos] = useState(0);
   const [introComplete, setIntroComplete] = useState(false);
 
-  const totalVideos = 4;
+  const totalVideos = 3;
   const nextVdRef = useRef(null);
 
-  const handleVideoLoad = () => {
-    setLoadedVideos((prev) => prev + 1);
-  };
-
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
-      setLoading(false);
-    }
-  }, [loadedVideos]);
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
@@ -286,7 +280,8 @@ const Hero = () => {
                   muted
                   id="current-video"
                   className="size-64 origin-center scale-150 object-cover object-center"
-                  onLoadedData={handleVideoLoad}
+                  preload="auto"
+                  playsInline
                 />
               </div>
             </VideoPreview>
@@ -299,7 +294,8 @@ const Hero = () => {
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoadedData={handleVideoLoad}
+            preload="auto"
+            playsInline
           />
           <video
             src={getVideoSrc(
@@ -309,7 +305,8 @@ const Hero = () => {
             loop
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
+            preload="auto"
+            playsInline
           />
         </div>
 
