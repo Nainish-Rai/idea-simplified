@@ -31,7 +31,7 @@ const About = () => {
     <div id="about" className="min-h-screen w-screen bg-black">
       {/* Client Logos Section */}
       <div className="relative mb-16 section-padding">
-        <div className="container-grid">
+        <div className="">
           <p className="text-h2 text-white/90 text-center mb-12">
             Trusted by Global <span className="text-accent">I</span>nnovators
             and Market Leaders
@@ -51,13 +51,13 @@ const About = () => {
           />
 
           <div className="max-w-4xl mx-auto mt-8">
-            <p className="text-balance text-white/80 text-lg leading-relaxed">
+            <p className="text-balance text-justify text-white/80 text-lg leading-relaxed">
               At Idea Simplified, we combine strategic clarity with creative
-              firepower to deliver experiences that matter — from immersive
-              brand launches to high-stakes CXO roundtables and global
-              roadshows. With offices in India and the UAE, our work spans
-              across fintech, energy, healthcare, and beyond. <br /> Whether
-              you're building a brand, launching a product, or creating
+              firepower to deliver experiences that matter, from immersive brand
+              launches to high-stakes CXO roundtables and global roadshows. With
+              offices in India and the UAE, our work spans across emerging tech,
+              energy, built construction, sustainability, and beyond. Whether
+              you&apos;re building a brand, launching a product, or creating
               industry-defining conversations.
             </p>
           </div>

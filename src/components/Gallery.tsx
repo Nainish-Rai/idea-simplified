@@ -42,7 +42,7 @@ const GallerySection = () => {
     <section className="py-32 bg-black">
       <div className="relative container max-w-7xl mx-auto overflow-x-clip">
         <div className="flex flex-col items-center justify-center">
-          <p className=" font-['Inter'] font-semibold text-center font-playfair text-2xl  md:text-7xl">
+          <p className="font-['Karla'] font-semibold text-center text-2xl md:text-7xl">
             Our Stage Design Showcase
           </p>
           <p className="text-md my-10 max-w-xl text-center opacity-50">
@@ -91,7 +91,7 @@ const GallerySection = () => {
                         </p>
                         {/* <h3 className="w-42 text-right text-3xl font-bold text-white lg:w-fit lg:whitespace-nowrap">
                           {image.title.split(" ")[0]}
-                          <span className="font-playfair italic">
+                          <span className="font-['Karla'] font-bold">
                             {" "}
                             {image.title.split(" ")[1]}{" "}
                           </span>

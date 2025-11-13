@@ -173,7 +173,7 @@ const AboutUs = () => {
           </div>{" "}
           <div className="container-grid">
             <div className="max-w-5xl mx-auto text-center">
-              <p className="text-body text-lg text-balance leading-relaxed mb-12">
+              <p className="text-body text-lg text-justify text-balance leading-relaxed mb-12">
                 Whether we’re launching a brand, hosting a summit, or designing
                 a digital ecosystem — we’re driven by one belief: Simplify the
                 idea. Amplify the experience. We’re not just consultants or
@@ -257,7 +257,7 @@ const AboutUs = () => {
             <p className="text-h2 font-bold mb-8">
               Have Any Projects in your Mind!
             </p>
-            <p className="text-body text-lg text-balance mb-12 max-w-2xl mx-auto">
+            <p className="text-body text-lg  text-balance mb-12 max-w-2xl mx-auto">
               Feel free to contact us and let's create something extraordinary
               together. Your vision, our expertise - the perfect combination for
               success.
