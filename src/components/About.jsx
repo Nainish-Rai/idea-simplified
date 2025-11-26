@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -8,6 +9,24 @@ import AnimatedTitle from "./AnimatedTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const fusionImages = [
+    "img/fusion-2.png",
+    "img/fusion-3.png",
+    "img/fusion-4.png",
+    "img/fusion-5.png",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % fusionImages.length
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [fusionImages.length]);
+
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -66,11 +85,18 @@ const About = () => {
 
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
-          <img
-            src="img/fusion.jpg"
-            alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
-          />
+          <div className="absolute left-0 top-0 size-full overflow-hidden">
+            {fusionImages.map((image, index) => (
+              <img
+                key={image}
+                src={image}
+                alt={`Fusion Tech ${index + 2}`}
+                className={`absolute left-0 top-0 size-full object-cover transition-opacity duration-1000 ${
+                  index === currentImageIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
         </div>
       </div>
