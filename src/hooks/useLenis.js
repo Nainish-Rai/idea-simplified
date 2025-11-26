@@ -20,6 +20,9 @@ export const useLenis = () => {
       infinite: false,
     });
 
+    // Expose Lenis instance globally for scroll-to-top functionality
+    window.lenis = lenis;
+
     // Connect Lenis with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -33,6 +36,7 @@ export const useLenis = () => {
     return () => {
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      window.lenis = null;
     };
   }, []);
 };

@@ -15,7 +15,7 @@ const Hero = () => {
   const [loading, setLoading] = useState(true);
   const [introComplete, setIntroComplete] = useState(false);
 
-  const totalVideos = 3;
+  const totalVideos = 2;
   const nextVdRef = useRef(null);
 
   useEffect(() => {

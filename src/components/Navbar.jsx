@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
@@ -16,12 +15,11 @@ const navItems = [
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Refs for audio and navigation container
-  const audioElementRef = useRef(null);
+  // const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
@@ -32,10 +30,6 @@ const NavBar = () => {
   const location = useLocation();
 
   // Toggle audio and visual indicator
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -48,13 +42,6 @@ const NavBar = () => {
   };
 
   // Manage audio playback
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
-      audioElementRef.current.pause();
-    }
-  }, [isAudioPlaying]);
 
   useEffect(() => {
     if (currentScrollY === 0) {
@@ -181,30 +168,6 @@ const NavBar = () => {
                 }
               })}
             </div>
-
-            <button
-              onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-1 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300"
-              aria-label="Toggle audio"
-            >
-              <audio
-                ref={audioElementRef}
-                className="hidden"
-                src="/audio/loop.mp3"
-                loop
-              />
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
 
             {/* Hamburger Menu Button for Mobile */}
             <button

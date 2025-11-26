@@ -1,5 +1,6 @@
 import { FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import { TiLocationArrow } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
             </div>
 
             <p className="text-body text-white/70 leading-relaxed mb-8 max-w-md">
-              We are the award-winning experiential events and brand consulting
+              We are an award-winning experiential events and brand consulting
               firm that transforms your vision from ideation to flawless
               completion.
             </p>
@@ -76,20 +77,19 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "Home", href: "#home" },
-                { name: "Services", href: "#about" },
-                { name: "Our Work", href: "#story" },
+                { name: "Home", href: "/" },
                 { name: "About Us", href: "/about-us" },
-                { name: "Contact", href: "#contact" },
+                { name: "Our Work", href: "/work" },
+                { name: "Contact", href: "/contact-us" },
               ].map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="group flex items-center gap-2 text-white/70 hover:text-yellow-300 transition-colors duration-300 text-sm"
                   >
                     <TiLocationArrow className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,11 +103,10 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                "Experiential Events",
+                "Experiential Events & IPs",
                 "Brand Consulting",
-                "Digital Marketing",
-                "Event Production",
-                "Strategic Planning",
+                "Turnkey Exhibition Services",
+                "Event Execution",
               ].map((service, index) => (
                 <li key={index}>
                   <span className="text-white/70 text-sm hover:text-white transition-colors duration-300 cursor-pointer">
@@ -168,7 +167,7 @@ const Footer = () => {
               <div className="p-4 bg-gradient-to-r from-yellow-300/10 to-transparent border border-yellow-300/20 rounded-2xl">
                 <p className="text-sm text-white/70 mb-1">Email us:</p>
                 <a
-                  href="mailto:info@ideasimplified.in"
+                  href="mailto:info@ideasimplified.com"
                   className="text-yellow-300 hover:text-white transition-colors font-medium"
                 >
                   info@ideasimplified.in
@@ -192,24 +191,9 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-6 text-sm">
-            <a
-              href="#privacy"
-              className="text-white/60 hover:text-yellow-300 transition-colors duration-300"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#terms"
-              className="text-white/60 hover:text-yellow-300 transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#cookies"
-              className="text-white/60 hover:text-yellow-300 transition-colors duration-300"
-            >
-              Cookie Policy
-            </a>
+            <span className="text-white/40 text-xs">
+              Crafted with precision & passion
+            </span>
           </div>
         </div>
       </div>

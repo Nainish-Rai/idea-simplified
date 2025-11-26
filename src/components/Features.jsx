@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 
-export const BentoTilt = ({ children, className = "" }) => {
+export const BentoTilt = ({ children, className = "", onClick }) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef(null);
 
@@ -32,6 +32,7 @@ export const BentoTilt = ({ children, className = "" }) => {
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
       style={{ transform: transformStyle }}
     >
       {children}
