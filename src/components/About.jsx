@@ -22,7 +22,7 @@ const About = () => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % fusionImages.length
       );
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [fusionImages.length]);
@@ -32,17 +32,19 @@ const About = () => {
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        end: "+=800 center",
-        scrub: 0.5,
+        end: "+=1200 center",
+        scrub: 1,
         pin: true,
         pinSpacing: true,
       },
     });
 
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
+      width: "85vw",
+      height: "85vh",
+      borderRadius: "1.5rem",
+      ease: "power2.inOut",
+      scale: 1.05,
     });
   });
 
@@ -83,7 +85,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="h-dvh w-screen" id="clip">
+      <div
+        className="h-dvh w-screen flex items-center justify-center"
+        id="clip"
+      >
         <div className="mask-clip-path about-image">
           <div className="absolute left-0 top-0 size-full overflow-hidden">
             {fusionImages.map((image, index) => (
@@ -91,8 +96,10 @@ const About = () => {
                 key={image}
                 src={image}
                 alt={`Fusion Tech ${index + 2}`}
-                className={`absolute left-0 top-0 size-full object-cover transition-opacity duration-1000 ${
-                  index === currentImageIndex ? "opacity-100" : "opacity-0"
+                className={`absolute left-0 top-0 size-full object-cover transition-all duration-[1500ms] ease-in-out ${
+                  index === currentImageIndex
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-110"
                 }`}
               />
             ))}
