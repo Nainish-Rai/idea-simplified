@@ -170,7 +170,7 @@ const Footer = () => {
                   href="mailto:info@ideasimplified.com"
                   className="text-yellow-300 hover:text-white transition-colors font-medium"
                 >
-                  info@ideasimplified.in
+                  info@ideasimplified.com
                 </a>
               </div>
             </div>

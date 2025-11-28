@@ -133,7 +133,7 @@ const ContactUs = () => {
       title: "Email Us",
       description: "Get detailed responses to your queries",
       action: "Send an email",
-      link: "mailto:info@ideasimplified.in",
+      link: "mailto:info@ideasimplified.com",
     },
     {
       icon: Linkedin,

@@ -99,7 +99,7 @@ const Contact = () => {
             <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm">
               <p className="text-white/70">
                 <span className="text-white font-medium">Email:</span>{" "}
-                info@ideasimplified.in
+                info@ideasimplified.com
               </p>
             </div>
           </div>
