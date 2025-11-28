@@ -90,9 +90,9 @@ const Contact = () => {
                   UAE Office
                 </h4>
                 <p className="text-white/70 leading-relaxed">
-                  One Central, Trade Centre, Dubai
+                  Sharjah Business Centre, UAE
                 </p>
-                <p className="text-white/70">+971 05893 44219</p>
+                <p className="text-white/70">+971 56 789 3131</p>
               </div>
             </div>
 

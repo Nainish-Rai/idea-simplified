@@ -111,9 +111,9 @@ const ContactUs = () => {
     },
     {
       country: "UAE",
-      city: "Dubai",
-      address: "One Central, Trade Centre, Dubai",
-      phone: "+971 05893 44219",
+      city: "Sharjah",
+      address: "Sharjah Business Centre, UAE",
+      phone: "+971 56 789 3131",
       email: "uae@ideasimplified.in",
       timezone: "GST (GMT +4:00)",
       image: "/img/contact-2.webp",

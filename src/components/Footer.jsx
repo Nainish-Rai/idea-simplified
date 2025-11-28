@@ -125,20 +125,20 @@ const Footer = () => {
             </h4>
 
             <div className="space-y-6">
-              {/* Dubai Office */}
+              {/* UAE Office */}
               <div className="p-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                 <h5 className="text-white font-semibold text-sm mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 bg-yellow-300 rounded-full" />
-                  Dubai Office
+                  UAE Office
                 </h5>
                 <div className="text-white/70 text-sm space-y-1">
-                  <p>One Central – Trade Centre</p>
-                  <p>Dubai – UAE</p>
+                  <p>Sharjah Business Centre</p>
+                  <p>UAE</p>
                   <a
-                    href="tel:+971058934219"
+                    href="tel:+971567893131"
                     className="text-yellow-300 hover:text-white transition-colors"
                   >
-                    +971 05893 44219
+                    +971 56 789 3131
                   </a>
                 </div>
               </div>
